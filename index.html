@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- رابط ملف CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- معلومات الصفحة -->
+  <title>حساب عمرك بالأيام</title>
+  <meta name="description" content="احسب عمرك بالأيام واكتشف برجك الفلكي مع معلومة عن برجك.">
+  <meta name="keywords" content="حساب العمر, الأبراج, البرج الفلكي, عمر بالأيام, Zodiac, Birthday">
+  <meta name="author" content="عبدالرحمن احمد | Abd Elrahman Ahmed | GAMA">
+
+  <!-- أيقونة التبويب -->
+  <link rel="icon" type="image/png" href="icon.png">
+
+
+  <!-- Open Graph لتشارك الصفحة -->
+  <meta property="og:title" content="احسب عمرك واكتشف برجك">
+  <meta property="og:description" content="أداة ممتعة لحساب الأيام التي عشتها ومعرفة برجك الفلكي ومعلومة عنه.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="#">
+  <meta property="og:image" content="path_to_Borg.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="خلفية الأبراج وحساب العمر">
+  <meta property="og:locale" content="ar_AR">
+  <meta property="og:site_name" content="أداة الأبراج وحساب العمر">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="احسب عمرك واكتشف برجك">
+  <meta name="twitter:description" content="أداة ممتعة لحساب الأيام التي عشتها ومعرفة برجك الفلكي ومعلومة قصيرة عنه.">
+  <meta name="twitter:image" content="Borg.jpg">
+</head>
+
+
+
+<body>
+
+  <h1>حساب كم يوم عشت</h1>
+
+  <p id="p1">ادخل تاريخ ميلادك</p>
+
+
+ <form method="post">
+     <div id="inputs" class="inputs">
+  <input type="number" placeholder="السنة" required >
+  <input type="number" placeholder="الشهر" required min="1" max="12">
+  <input type="number" placeholder="اليوم" required min="1" max="31">
+</div>
+
+
+
+  
+  <br><br>
+<div>
+  <button id="button">احسب</button>
+</div>
+
+</form>
+
+<!-- نافذة منبثقة -->
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span id="close">&times;</span>
+    <p id="result-days"></p>      <!-- عدد الأيام -->
+    <p id="result-zodiac"></p>    <!-- برج المستخدم مع الإيموجي -->
+    <p id="result-info"></p>      <!-- معلومة قصيرة عن البرج -->
+  </div>
+</div>
+
+
+
+
+  <script src="script.js"></script>
+</body>
+
+</body>
+</html>

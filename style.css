@@ -1,0 +1,166 @@
+/* ================== جسم الصفحة ================== */
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: url('Borg.png') no-repeat center center fixed;
+  background-size: contain;   /* الصورة تتقلص لتبقى كاملة */
+  background-color: #000;     /* يظهر اللون الأسود في الفراغ إذا لم تطابق أبعاد الشاشة */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* من الأعلى */
+  padding-top: 60px;           /* المسافة من الأعلى */
+  font-family: Arial, Tahoma, sans-serif;
+  color: gold;
+}
+/* إخفاء العنوان عن المستخدم (للمتصفح) */
+h1 {
+  position: absolute;
+  left: -9999px;
+}
+
+/* نص الوصف */
+p#p1 {
+  font-size: 150%;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* ================== الانبوتس ================== */
+.inputs {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 25px;
+  flex-wrap: nowrap; 
+}
+
+.inputs input {
+  width: 80px;
+  padding: 12px;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 8px;
+  border: 1px solid #555;
+  background: #111;
+  color: #fff;
+}
+
+.inputs input::placeholder {
+  color: #fff;
+  opacity: 1;
+}
+
+/* ================== الزر ================== */
+button {
+  display: block;         /* ليتمركز أفقياً */
+  margin: 20px auto 60px; /* مسافة فوقه 20px وأسفل الصورة 60px */
+  padding: 12px 40px;
+  font-size: 18px;
+  background: #2563eb;
+  color: gold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background: #1e4ed8;
+  transform: scale(1.05);
+}
+
+/* ================== النافذة المنبثقة ================== */
+.popup {
+  display: flex;                  /* لتسهيل المحاذاة */
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);   /* خلفية شبه شفافة */
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.popup.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.popup-content {
+  background: #222;
+  color: gold;
+  padding: 25px 35px;
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+  min-width: 280px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  transform: scale(0.9);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.popup.show .popup-content {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* ================== نصوص النافذة ================== */
+.popup-content p {
+  margin: 6px 0;
+}
+
+#result-days {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+#result-zodiac {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+#result-info {
+  font-size: 16px;
+  font-style: italic;
+}
+
+/* ================== زر الإغلاق ================== */
+#close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+#close:hover {
+  color: red;
+  transform: scale(1.2);
+}
+
+/* ================== توافق مع الهواتف ================== */
+@media (max-width: 480px) {
+  .inputs input {
+    width: 70px;
+  }
+
+  button {
+    width: 80%;
+    margin: 201px auto 0;
+  }
+
+  .popup-content {
+    width: 90%;
+    padding: 20px;
+  }
+}
